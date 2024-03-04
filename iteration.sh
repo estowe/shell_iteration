@@ -30,7 +30,7 @@ QUERYDATE=${USERDATE:-$(date +"%Y/%b/%d")}
 
 # Prompt the user for a specific product and payload
 while true; do
-    echo "Please select a product. Press enter for all products:"
+    echo "Please select a product:"
     select PRODUCT_CHOICE in "${!PRODUCTS[@]}" "All"; do
         if [ -n "$PRODUCT_CHOICE" ] || [ "$PRODUCT_CHOICE" = "All" ]; then
             break 2
@@ -42,7 +42,7 @@ while true; do
 done
 
 while true; do
-    echo "Please select a payload. Press enter for all payloads:"
+    echo "Please select a payload:"
     select PAYLOAD_CHOICE in "${!PAYLOADS[@]}" "All"; do
         if [ -n "$PAYLOAD_CHOICE" ] || [ "$PAYLOAD_CHOICE" = "All" ]; then
             break 2
